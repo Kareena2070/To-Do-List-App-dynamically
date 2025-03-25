@@ -10,11 +10,11 @@ body{
     margin-top: 3rem;
     
     background-color: #f7e1d7;
-    /* border-radius: 10px solid black;  */
-    width: 600px;
-    margin-left: 4.5em;
+    /* border-radius: 10px solid black;     */
+    /* width: 600px; */
+    margin: 0.5em;
   overflow: hidden;
-  /
+  font-size: 3em;
 }
 .displayTask{
     overflow-wrap: break-word;
@@ -24,10 +24,11 @@ body{
     flex-direction: column;
     white-space: normal;
     gap: 5px;
-    height: 12rem;
+    height: 12rem;  
 }
 .addTask{
     margin-top: 1em;
+  
 }
 
 button {
@@ -36,8 +37,12 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
 }
 
+input{
+    font-size: 1em;
+}
 .remove-btn {
     background-color: red;
     color: white;
