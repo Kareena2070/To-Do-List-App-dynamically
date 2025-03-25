@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #dedbd2;
+}
+.todolist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    
+    background-color: #f7e1d7;
+    /* border-radius: 10px solid black;  */
+    width: 600px;
+    margin-left: 4.5em;
+  overflow: hidden;
+  /
+}
+.displayTask{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    white-space: normal;
+    gap: 5px;
+    height: 12rem;
+}
+.addTask{
+    margin-top: 1em;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+    .todolist {
+        width: 95%;
+        padding: 0.8rem;
+    }
+    
+    .displayTask {
+        max-height: 10rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
