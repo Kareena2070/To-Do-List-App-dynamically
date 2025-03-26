@@ -24,7 +24,7 @@ body{
     flex-direction: column;
     white-space: normal;
     gap: 5px;
-    height: 12rem;  
+    height: 38rem;  
 }
 .addTask{
     margin-top: 1em;
