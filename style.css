@@ -79,3 +79,98 @@ li:hover button {
 }
 
 
+/*===== Responsive Webpage ======*/
+
+/* screen size max 1200 */
+
+@media (max-width: 1100px) {
+
+    .todolist{
+        padding: 0 15em;
+    }
+    .todolist h4{
+        font-size: 2rem;
+    }
+
+    .todolist h1{
+        font-size: 4rem;
+    }
+
+    .addTask input,
+    .addTask button {
+        padding: 0.3em 0.8rem;
+        font-size: 1.8rem;
+    }
+    
+    .addTask{
+        margin-top: 1em;
+    }
+}
+
+
+/* screen size max 950 */
+@media (max-width: 950px) {
+
+    .todolist{
+        padding: 0 10em;
+    }
+    .todolist h1{
+        font-size: 3rem;
+    }
+    .addTask{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .addTask input,
+    .addTask button {
+        padding: 0.2em 0.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* screen size max 600 */
+@media (max-width:600px) {
+
+    .addTask {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .todolist{
+        padding: 0 5em;
+    }
+
+    .addTask input,
+    .addTask button {
+        width: 100%;
+    }
+
+    .todolist h1{
+        font-size: 2rem;
+    }
+    
+    .todolist h4{
+        font-size: 1rem;
+    }
+}
+
+/* screen size max 350 */
+@media (max-width:350px) {
+    .todolist{
+        padding: 0 2rem;
+    }
+
+    .todolist h1 {
+        font-size: 1.5rem;
+    }
+    .todolist h4 {
+        font-size: 0.9rem;
+    }
+
+    .addTask input,
+    .addTask button {
+        font-size: 0.8rem;
+    }
+}
