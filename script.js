@@ -1,58 +1,49 @@
 let addTask = document.querySelector("input");
-let displayTask = document.querySelector(".displayTask");
-// console.log(displayTask) 
 let btn = document.querySelector("button");
+let displayTask = document.querySelector(".displayTask");
 
-let count = 0;
+let listTask = document.createElement("ol")
+displayTask.append(listTask)
 
 
-
-function taskAdd () {
-    let task = addTask.value.trim();
-    if(task === ""){
-        return;        // remove empty input submissions 
+function addNewtask(){
+    if(addTask.value.trim() !==""){
+        let task = document.createElement("li")
+        let taskText = document.createElement("span")
+        taskText.textContent = addTask.value
+        task.append(taskText);
+        let doneBtn = document.createElement("button")
+        doneBtn.textContent = "✅"
+        doneBtn.classList.add("done")
+        doneBtn.addEventListener("click", ()=>{
+            taskText.classList.toggle("completed");
+            if (taskText.classList.contains("completed")) {
+                doneBtn.textContent = "↩️";
+            } else {
+                doneBtn.textContent = "✅";
+            }
+        
+        })
+        let deleteBtn = document.createElement("button")
+        deleteBtn.textContent = "🗑️"
+        deleteBtn.classList.add("deleteBtn")
+        deleteBtn.addEventListener("click", ()=>{
+            task.remove()
+        })
+        task.append( doneBtn, deleteBtn)
+        listTask.append(task)
+        addTask.value = "" 
     }
-    count++;
-
-    let taskContainer = document.createElement("div");
-    taskContainer.style.display = "flex";
-    taskContainer.style.alignItems = "center";
-    taskContainer.style.marginBottom = "5px"; // Spacing between tasks
-
-    let taskText = document.createElement("span");
-    taskText.innerText = `${count}. ${task}`;
-    taskText.style.marginRight = "10px"; // Space between text and button
-
-
-            
-            
-
-            let removeBtn = document.createElement("button");  // make a remove btn
-            // displayTask.append(removeBtn);
-            removeBtn.innerText = "x";
-            removeBtn.style.backgroundColor = "red";
-            removeBtn.style.borderRadius ="50%";
-            removeBtn.style.marginRight = "1.5em";
-
-
-
-
-            // Append elements to task container
-    taskContainer.appendChild(removeBtn);
-    taskContainer.appendChild(taskText);
-    
-    // Append task container to displayTask
-    displayTask.appendChild(taskContainer);
-
-
-
-    //  displayTask.innerHTML += count + ". " + task +"<br></br>" ;   // add more task with previous task also
-    addTask.value = "";  //  Clears input after adding task
-removeBtn.addEventListener("click", () => {
-    taskContainer.remove();
-});
-   
 }
 
-btn.addEventListener("click", taskAdd);     
+
+btn.addEventListener("click", addNewtask);
+addTask.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter"){
+        addNewtask();
+    }
+})
+
+
+
 
